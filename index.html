@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutina de Acondicionamiento para Tenis</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --table-alt: #f9f9f9;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        /* Estilos para las pestañas */
+        .tab-container {
+            margin-top: 10px;
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--secondary);
+            margin-bottom: 20px;
+        }
+        .tab-button {
+            background-color: #f1f1f1;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 24px;
+            transition: 0.3s;
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--primary);
+            border-radius: 8px 8px 0 0;
+            margin-right: 5px;
+        }
+        .tab-button:hover {
+            background-color: #e2e2e2;
+        }
+        .tab-button.active {
+            background-color: var(--secondary);
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            animation: fadeEffect 0.5s;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: var(--table-alt);
+        }
+        .fase-row td {
+            background-color: #d5e5f2;
+            font-weight: bold;
+            color: var(--primary);
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+                border-bottom: none;
+            }
+            .tab-button {
+                border-radius: 4px;
+                margin-right: 0;
+                margin-bottom: 5px;
+                width: 100%;
+            }
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            th { position: absolute; top: -9999px; left: -9999px; }
+            tr { border: 1px solid #ccc; margin-bottom: 10px; }
+            td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 45%;
+                min-height: 24px;
+            }
+            td:before {
+                position: absolute;
+                top: 12px;
+                left: 6px;
+                width: 40%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+            td:nth-of-type(1):before { content: "Ejercicio / Zona"; }
+            td:nth-of-type(2):before { content: "Series"; }
+            td:nth-of-type(3):before { content: "Reps/Tiempo"; }
+            td:nth-of-type(4):before { content: "Descanso"; }
+            td:nth-of-type(5):before { content: "Descripción"; }
+            .fase-row td { padding: 10px; text-align: center; }
+            .fase-row td:before { content: ""; display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Programa Híbrido de Acondicionamiento para Tenis</h1>
+    
+    <div class="tab-container">
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab(event, 'dia-a')" id="defaultOpen">Día A: Potencia Inferior</button>
+            <button class="tab-button" onclick="openTab(event, 'dia-b')">Día B: Cadena Posterior</button>
+            <button class="tab-button" onclick="openTab(event, 'dia-c')">Día C: Híbrido / Aislamiento</button>
+        </div>
+
+        <div id="dia-a" class="tab-content">
+            <h2>Día A: Potencia Inferior y Tracción Anterior</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ejercicio / Zona</th>
+                        <th>Series</th>
+                        <th>Repeticiones / Tiempo</th>
+                        <th>Descanso</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="fase-row"><td colspan="5">Entrada en calor</td></tr>
+                    <tr><td>Movilidad: Cuello</td><td>1</td><td>10 seg</td><td>-</td><td>Movimiento controlado de la cabeza arriba, abajo y hacia los costados.</td></tr>
+                    <tr><td>Movilidad: Hombros y escápulas</td><td>1</td><td>20 seg</td><td>-</td><td>Círculos amplios con los brazos extendidos hacia adelante y atrás.</td></tr>
+                    <tr><td>Movilidad: Codos y muñecas</td><td>1</td><td>20 seg</td><td>-</td><td>Rotación continua de muñecas y flexo-extensión rápida de codos.</td></tr>
+                    <tr><td>Movilidad: Tronco / Columna</td><td>1</td><td>15 seg</td><td>-</td><td>Rotar el torso hacia los lados pivotando sobre la punta de los pies.</td></tr>
+                    <tr><td>Movilidad: Caderas</td><td>1</td><td>20 seg</td><td>-</td><td>Círculos amplios con la pelvis y balanceos de pierna tipo péndulo.</td></tr>
+                    <tr><td>Movilidad: Rodillas</td><td>1</td><td>15 seg</td><td>-</td><td>Mini sentadillas controladas sin bajar de 90 grados.</td></tr>
+                    <tr><td>Movilidad: Tobillos</td><td>1</td><td>20 seg</td><td>-</td><td>Círculos articulares en el aire alternando el sentido horario y antihorario.</td></tr>
+                    <tr><td>Rotaciones de tronco de pie</td><td>2</td><td>15 reps/lado</td><td>Continuo</td><td>Girar la cintura de lado a lado manteniendo el control desde el abdomen.</td></tr>
+                    <tr><td>Sombra de tenis</td><td>1</td><td>2 min</td><td>-</td><td>Imitar el gesto del drive y revés en el lugar, marcando la rotación.</td></tr>
+                    
+                    <tr class="fase-row"><td colspan="5">Principal</td></tr>
+                    <tr><td>Sentadillas con barra</td><td>3-4 (S1-3)<br>2 (S4)</td><td>8-12 (S1-3)<br>8 (S4)</td><td>2 a 3 min</td><td>Barra en la espalda alta, bajar flexionando caderas y rodillas manteniendo espalda recta.</td></tr>
+                    <tr><td>Dominadas pronas</td><td>3-4 (S1-3)<br>2 (S4)</td><td>8-12 (S1-3)<br>8 (S4)</td><td>2 a 3 min</td><td>Colgarse de la barra (palmas hacia adelante) y subir hasta pasar la barbilla.</td></tr>
+                    <tr><td>Flexiones de brazos</td><td>3-4 (S1-3)<br>2 (S4)</td><td>8-12 (S1-3)<br>8 (S4)</td><td>90 seg a 2 min</td><td>En el piso, bajar el cuerpo en bloque y empujar hasta extender brazos.</td></tr>
+                    <tr><td>Giros Rusos con disco</td><td>3-4 (S1-3)<br>2 (S4)</td><td>8-12 (S1-3)<br>8 (S4)</td><td>90 seg a 2 min</td><td>Sentado, pies ligeramente elevados, llevar el disco de un lado al otro tocando el piso.</td></tr>
+                    <tr><td>Curl de muñeca (flex/ext)</td><td>3-4 (S1-3)<br>2 (S4)</td><td>8-12 (S1-3)<br>8 (S4)</td><td>60 a 90 seg</td><td>Antebrazos apoyados, flexionar y extender solo las muñecas usando la barra.</td></tr>
+                    <tr><td>Saco de boxeo</td><td>3</td><td>3 min / ronda</td><td>1 min</td><td>Combinaciones libres priorizando rotación de cadera y movilidad de pies.</td></tr>
+
+                    <tr class="fase-row"><td colspan="5">Elongación</td></tr>
+                    <tr><td>Estiramiento de antebrazos</td><td>2</td><td>45 seg / brazo</td><td>-</td><td>Brazo estirado, empujar los dedos hacia abajo y hacia arriba con la mano contraria.</td></tr>
+                    <tr><td>Estiramiento de pectorales</td><td>2</td><td>45 seg</td><td>-</td><td>Apoyar el antebrazo en un marco de puerta a 90° y girar el torso hacia el lado opuesto.</td></tr>
+                    <tr><td>Estiramiento cuádriceps/glúteos</td><td>2</td><td>45 seg / pierna</td><td>-</td><td>De pie, llevar el talón al glúteo. Acostado, abrazar una rodilla hacia el pecho.</td></tr>
+                </tbody>
+            </table>
+        </div>
